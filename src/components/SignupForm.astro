@@ -3,7 +3,8 @@
 ---
 
 <form class="form">
-  <h3>Hvad kunne du tænke dig at hjælpe med?</h3>
+  <h1>TILMELD DIG</h1>
+  <h4>Hvad kunne du tænke dig at hjælpe med?</h4>
   <div class="checkbox-container">
     <div>
       <div class="checkbox-content">
@@ -106,11 +107,13 @@
     </div>
   </section>
   <div>
-    <input type="submit" />
+    <input class="knap" type="submit" />
   </div>
 </form>
 
 <style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
   section {
     display: flex;
     flex-direction: column;
@@ -132,6 +135,13 @@
   .form {
     border: 2px solid rgba(1, 103, 255, 1);
     border-radius: 8px;
+    font-family: Inter;
+  }
+  h1 {
+    color: rgba(1, 103, 255, 1);
+  }
+  .knap {
+    color: rgba(1, 103, 255, 1);
   }
   @media (width > 768px) {
     .checkbox-container {

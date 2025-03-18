@@ -1,0 +1,143 @@
+---
+
+---
+
+<form class="form">
+  <h3>Hvad kunne du tænke dig at hjælpe med?</h3>
+  <div class="checkbox-container">
+    <div>
+      <div class="checkbox-content">
+        <input type="checkbox" id="checkbox1" name="checkbox1" />
+        <label for="checkbox1">De sociale madklubber</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox2" name="checkbox2" />
+        <label for="checkbox2">Økonomirådgivningen</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox3" name="checkbox3" />
+        <label for="checkbox3">Aktivitetsklubber</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox4" name="checkbox4" />
+        <label for="checkbox4">Yoga</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox5" name="checkbox5" />
+        <label for="checkbox5">Møbelhjælp</label>
+      </div>
+    </div>
+    <div>
+      <div>
+        <input type="checkbox" id="checkbox6" name="checkbox6" />
+        <label for="checkbox6">Netværksvenner</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox7" name="checkbox7" />
+        <label for="checkbox7">Peer-to-peer</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox8" name="checkbox8" />
+        <label for="checkbox8">LGBT+ venner</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox9" name="checkbox9" />
+        <label for="checkbox9">Massage</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox10" name="checkbox10" />
+        <label for="checkbox10">Ledelse af en aktivitet</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox11" name="checkbox11" />
+        <label for="checkbox11">Jeg vil bare høre mere</label>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="content">
+      <label for="navn">Dit fulde navn:</label>
+      <input
+        type="text"
+        id="navn"
+        name="navn"
+        placeholder="fx Alex Axelsen"
+        required
+      />
+    </div>
+
+    <div class="content">
+      <label for="nummer">Dit telefonnummer:</label>
+      <input
+        type="tel"
+        id="nummer"
+        name="nummer"
+        placeholder="fx 12345678"
+        required
+      />
+    </div>
+
+    <div class="content">
+      <label for="email">Din email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="fx alex_axel@gmail.com"
+        required
+      />
+    </div>
+
+    <div class="content">
+      <label for="postnummer">Dit postnummer:</label>
+      <input
+        type="text"
+        id="postnummer"
+        name="postnummer"
+        placeholder="fx 1234"
+        required
+      />
+    </div>
+
+    <div class="content">
+      <label for="kommentar">Spørgsmål eller kommentar?:</label>
+      <input type="text" id="kommentar" name="kommentar" />
+    </div>
+  </section>
+  <div>
+    <input type="submit" />
+  </div>
+</form>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+
+  .checkbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form {
+    border: 2px solid rgba(1, 103, 255, 1);
+    border-radius: 8px;
+  }
+  @media (width > 768px) {
+    .checkbox-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+  }
+</style>

@@ -1,12 +1,13 @@
 ---
 import { initFlipCards } from "../scripts/js";
 const { VilDuTekst, rolle, image } = Astro.props;
+const { oneWord } = Astro.props;
 ---
 
 <div class="card-container">
   <div class="card">
     <div class="card-face card-front" style={`background-image: url(${image});`}>
-      ${rolle ? `<span class="SaleLabel ">-${data.discount}%</span>` : ""}
+      <!-- // {rolle ? `<span class="SaleLabel ">-${data.discount}%</span>` : ""} -->
 
       <h2 set:html={rolle} />
       <!-- Tillader HTML-tags i props -->
@@ -14,8 +15,9 @@ const { VilDuTekst, rolle, image } = Astro.props;
     </div>
     <div class="card-face card-back">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat veritatis, in voluptates velit, debitis quis quo, minus officiis quisquam odit autem magni! Fugit repellat saepe vitae optio. Facilis, illum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto mollitia reprehenderit distinctio cum repudiandae corporis quidem facere quasi similique aut quo consequatur fugiat perferendis eius, dolor ad illum asperiores dicta? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Aliquid voluptatibus officiis, praesentium, modi magnam ratione commodi laudantium illo facilis fugit non velit a harum omnis possimus ullam aliquam. Explicabo, accusamus!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat veritatis, in voluptates velit, debitis quis quo, minus officiis quisquam odit autem magni! Fugit repellat saepe vitae optio. Facilis, illum? Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Architecto mollitia reprehenderit distinctio cum repudiandae corporis quidem facere quasi similique aut quo consequatur fugiat perferendis eius, dolor ad illum asperiores dicta? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Aliquid voluptatibus officiis, praesentium, modi magnam ratione commodi laudantium illo facilis fugit non velit a harum omnis possimus ullam aliquam. Explicabo, accusamus!
       </p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, dicta sed quasi error, necessitatibus quas omnis provident, fugit aut ab ducimus sequi eveniet culpa beatae earum ex distinctio. Corporis, ex.</p>
     </div>
@@ -32,6 +34,7 @@ const { VilDuTekst, rolle, image } = Astro.props;
     margin-bottom: 0rem;
     margin-left: 0.5rem;
     font-size: 38px;
+    text-transform: uppercase;
   }
   a {
     text-decoration: none;

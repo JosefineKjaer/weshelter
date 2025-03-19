@@ -5,14 +5,27 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <main>
-    <Cards_Frida image="møbelhjælper.webp" rolle="Møbel- <br/> hjælper" />
+    <Cards_Frida
+      image="møbelhjælper.webp"
+      rolle="Møbel- <br/> hjælper"
+      mainText=" <span> Bolig er <span/> første skridt ud af hjemløshed - men et hjem kræver mere end fire vægge. WeShelters møbelhjælp indsamler møbler og boligudstyr til hjemløse, der flytter i egen bolig. Indsaml og transporter møbler fra donorer til hjemløse, hjælp med flytninger og lagerstyring og skab tryghed og stabilitet for mennesker i en ny start."
+      du="- Er stabil, tålmodig og klar til at koordinere <br/> - Er aktiv på Facebook for at opspore møbeldonationer <br/> - Har lyst til at arbejde sammen med andre frivillige"
+      viTilbyder="-	Et meningsfuldt frivilligjob med konkret impact <br/> - Et stærkt fællesskab og løbende sparring <br/> - Fyraftensmøder og indsigt i socialt arbejde <br/> - Dokumentation for dit frivillige arbejde efter et år"
+      tid="Du kan afsætte et par timer om måneden (varierer efter behov)"
+      hvor="Storkøbenhavn"
+    />
     <Cards_Frida image="yoga.webp" rolle="Yoga" oneWord />
-    <Cards_Frida image="aktivitetsklubber.webp" rolle="Aktivitets- <br/> klubber" />
+    <div class="onefr">
+      <Cards_Frida image="aktivitetsklubber.webp" rolle="Aktivitets- <br/> klubber" class="wide-card" />
+    </div>
     <Cards_Frida image="massage.webp" rolle="Massage" oneWord />
     <Cards_Frida image="økonomi.webp" rolle="Økonomi- <br/> rådgivning" />
-    <Cards_Frida image="ledelse.webp" rolle="Ledelse" oneWord />
-    <Cards_Frida image="peer-to-peer.webp" rolle="Peer-to-peer" oneWord />
-    <Cards_Frida image="madklubber.webp" rolle="Sociale <br/> madklubber" />
+    <Cards_Frida image="ledelse.webp" rolle="Aktivitets- <br/> Ledelse" />
+    <Cards_Frida image="peer-to-peer.webp" rolle="Peer-to-peer" />
+    <div class="onefr">
+      <Cards_Frida image="madklubber.webp" rolle="Sociale <br/> madklubber" class="wide-card" />
+    </div>
+
     <Cards_Frida image="netværksvenner.webp" rolle="Netværks- <br/> venner" />
     <Cards_Frida image="lgbt.webp" rolle="Lgbt+ <br/> venner" />
   </main>
@@ -22,5 +35,24 @@ import Layout from "../layouts/Layout.astro";
   main {
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 1100px;
+    margin: auto;
+    gap: 1em;
+    padding: 1rem;
+  }
+
+  .onefr {
+    display: grid;
+  }
+
+  @media (min-width: 700px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .onefr {
+      grid-column: span 2;
+    }
   }
 </style>

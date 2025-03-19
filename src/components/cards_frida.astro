@@ -1,0 +1,86 @@
+---
+import { initFlipCards } from "../scripts/js";
+const { VilDuTekst, rolle, image } = Astro.props;
+---
+
+<div class="card-container">
+  <div class="card">
+    <div class="card-face card-front">
+      <h2>Møbel- <br />hjælper</h2>
+      <a href="#">Klik her for at læse mere &#8594;</a>
+    </div>
+    <div class="card-face card-back">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat veritatis, in voluptates velit, debitis quis quo, minus officiis quisquam odit autem magni! Fugit repellat saepe vitae optio. Facilis, illum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto mollitia reprehenderit distinctio cum repudiandae corporis quidem facere quasi similique aut quo consequatur fugiat perferendis eius, dolor ad illum asperiores dicta? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Aliquid voluptatibus officiis, praesentium, modi magnam ratione commodi laudantium illo facilis fugit non velit a harum omnis possimus ullam aliquam. Explicabo, accusamus!
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  import { initFlipCards } from "../scripts/js";
+  initFlipCards();
+</script>
+
+<style>
+  h2 {
+    margin-top: 11rem;
+    margin-bottom: 0rem;
+    margin-left: 0.5rem;
+    font-size: 38px;
+  }
+  a {
+    text-decoration: none;
+    background-color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    margin-left: 0.5rem;
+  }
+
+  .card-container {
+    perspective: 1000px;
+    display: inline-block;
+  }
+
+  .card {
+    margin: 10px auto;
+    max-width: 90%;
+    width: 100vw;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4); /* Højre og ned, 15px slør, 20% gennemsigtig sort */
+  }
+
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  /* Sikrer, at kun én side vises ad gangen */
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    border-radius: 10px;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+
+  .card-front {
+    background-image: url(../assets/billede1.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-back {
+    background-color: #fe902c;
+    transform: rotateY(180deg);
+    color: white;
+  }
+</style>

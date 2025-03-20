@@ -2,7 +2,7 @@
   <div class="logo"><h1>WeShelter</h1></div>
   <div class="støt_knap"><p class="støt_knap2">STØT</p></div>
   <div>
-    <nav>
+    <nav class="nav_grid">
       <label for="burger-toggle" class="burger-menu">&#9776;</label>
       <input type="checkbox" id="burger-toggle" class="burger-toggle" />
 
@@ -25,6 +25,11 @@
 <div class="instagram"><a href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a></div>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  .nav_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
   .header {
     display: flex;
@@ -171,9 +176,9 @@
   }
 
   .facebook img {
-    position: absolute;
+    /* position: absolute; */
     width: 8%;
-    top: 27%;
+    top: 26%;
     left: 90%;
     transition: transform 0.3s ease-in-out; /* Smooth overgang */
   }
@@ -185,7 +190,7 @@
   .instagram img {
     position: absolute;
     width: 8%;
-    top: 33%;
+    top: 31.5%;
     left: 90%;
     transition: transform 0.3s ease-in-out; /* Smooth overgang */
   }
@@ -195,34 +200,6 @@
   }
 
   @media (min-width: 768px) {
-    .burger-menu,
-    .burger-toggle,
-    .menu-list {
-      display: none !important; /* Skjuler burger-menu og dropdown-menu på stor skærm */
-    }
-
-    .menu-list {
-      display: flex !important; /* Viser menuen i headeren på stor skærm */
-      flex-direction: row;
-      position: static; /* Fjern absolut positionering */
-      background: none; /* Fjern baggrundsfarven */
-      padding-left: 250%;
-      font-size: 140%;
-      padding-top: 22%;
-      gap: 50%;
-      white-space: nowrap;
-    }
-
-    .menu-list a {
-      color: white; /* Tilpas tekstfarven */
-
-      text-decoration: none;
-    }
-
-    .menu-list a:hover {
-      color: #fe902c;
-    }
-
     h1 {
       font-size: 300%;
     }
@@ -233,27 +210,6 @@
 
     .logo {
       padding-left: 2%;
-    }
-
-    .støt_knap {
-      position: absolute;
-      left: 92%;
-      top: 12%;
-      display: flex; /* Brug flexbox for at centrere indholdet */
-      justify-content: center; /* Centrerer teksten horisontalt */
-      align-items: center; /* Centrerer teksten vertikalt */
-      text-align: center; /* Sørger for, at teksten er centreret */
-      cursor: pointer; /* Gør det til en klikbar knap */
-    }
-
-    .støt_knap2 {
-      background-color: #fe902c;
-      padding-top: 20%;
-      padding-bottom: 20%;
-      padding-left: 40%;
-      padding-right: 40%;
-      border-radius: 25px;
-      font-size: 20px;
     }
 
     .hero {
@@ -305,6 +261,69 @@
       width: 6%;
       top: 100%;
       left: 92%;
+    }
+
+    .burger-menu {
+      font-size: 50px;
+    }
+    .støt_knap2 {
+      background-color: #fe902c;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      padding-left: 40%;
+      padding-right: 40%;
+      border-radius: 25px;
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .burger-menu,
+    .burger-toggle,
+    .menu-list {
+      display: none !important; /* Skjuler burger-menu og dropdown-menu på stor skærm */
+    }
+
+    .menu-list {
+      display: flex !important; /* Viser menuen i headeren på stor skærm */
+      flex-direction: row;
+      position: static; /* Fjern absolut positionering */
+      background: none; /* Fjern baggrundsfarven */
+      padding-left: 250%;
+      font-size: 140%;
+      padding-top: 22%;
+      gap: 50%;
+      white-space: nowrap;
+    }
+
+    .menu-list a {
+      color: white; /* Tilpas tekstfarven */
+
+      text-decoration: none;
+    }
+
+    .menu-list a:hover {
+      color: #fe902c;
+    }
+
+    .støt_knap {
+      position: absolute;
+      left: 92%;
+      top: 12%;
+      display: flex; /* Brug flexbox for at centrere indholdet */
+      justify-content: center; /* Centrerer teksten horisontalt */
+      align-items: center; /* Centrerer teksten vertikalt */
+      text-align: center; /* Sørger for, at teksten er centreret */
+      cursor: pointer; /* Gør det til en klikbar knap */
+    }
+
+    .støt_knap2 {
+      background-color: #fe902c;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      padding-left: 40%;
+      padding-right: 40%;
+      border-radius: 25px;
+      font-size: 20px;
     }
   }
 </style>

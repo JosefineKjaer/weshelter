@@ -1,0 +1,379 @@
+<header>
+  <nav>
+    <div class="logo"><p>WeShelter</p></div>
+
+    <div class="menu">
+      <label for="burger-toggle" class="burger-menu">&#9776;</label>
+      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+      <ul class="menu_list">
+        <li><a href="">Få hjælp</a></li>
+        <li><a href="">Bliv frivillig</a></li>
+        <li><a href="">Om</a></li>
+        <li><a href="">Kontakt</a></li>
+      </ul>
+      <button class="støt_btn">Støt</button>
+    </div>
+  </nav>
+  <section class="hero">
+    <div>
+      <h1>“At være <span class="frivillig">frivillig</span> er at gøre en forskel – for andre og for dig selv.”</h1>
+    </div>
+    <div class="venner">
+      <img src="/public/weshelter.webp" alt="" />
+    </div>
+    <div class="buttons">
+      <button class="frivillig_btn">Bliv frivillig</button>
+
+      <div>
+        <a class="facebook" href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a>
+        <a class="instagram" href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a>
+      </div>
+    </div>
+  </section>
+</header>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  * {
+    font-family: Inter;
+    color: white;
+  }
+
+  p {
+    font-weight: 600;
+    padding-left: 5%;
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-weight: 600;
+    padding: 2%;
+    padding-left: 3%;
+    max-width: 280px;
+  }
+
+  .frivillig {
+    color: #fe902c;
+  }
+
+  header {
+    background-color: #0167ff;
+    width: 100%;
+    height: 30%;
+  }
+
+  .venner {
+    position: relative;
+  }
+
+  .venner img {
+    position: absolute;
+    width: 34vw;
+    right: 0.7rem;
+    bottom: -2rem;
+    z-index: 0;
+  }
+  /********************/
+  /* NAV */
+  nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    grid-column: 3;
+  }
+
+  /********************/
+  /* BURGER MENU  */
+  .burger-menu {
+    cursor: pointer;
+    font-size: 35.1px;
+    color: white;
+  }
+
+  .burger-toggle {
+    display: none;
+  }
+
+  .burger-toggle:checked + .menu_list {
+    display: block;
+  }
+
+  .menu_list {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: #0167ff;
+    z-index: 100;
+    text-align: center;
+    top: 40px;
+    width: 100%;
+  }
+
+  .menu_list a:hover {
+    color: #fe902c;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0167ff;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 5px;
+  }
+
+  /********************/
+  /* KNAPPER */
+  button {
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+
+  .støt_btn {
+    background-color: #fe902c;
+    border-radius: 70px;
+    padding: 0rem 1.5rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover,
+  .instagram:hover,
+  .facebook:hover {
+    transform: scale(1.1);
+  }
+
+  .buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frivillig_btn {
+    background-color: white;
+    color: #0167ff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .buttons div {
+    position: absolute;
+    top: -24%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .instagram,
+  .facebook {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .instagram img,
+  .facebook img {
+    width: 30px;
+  }
+
+  /********************/
+  /*MEDIA QURIES*/
+
+  @media (width >= 411px) {
+    h1 {
+      max-width: 60%;
+    }
+  }
+
+  @media (width >= 450px) {
+    .venner img {
+      bottom: -3rem;
+    }
+  }
+
+  @media (width >= 520px) {
+    .venner img {
+      width: 34vw;
+      max-width: 177px;
+      bottom: -3.1rem;
+      right: 1rem;
+    }
+  }
+
+  @media (width >= 600px) {
+    h1 {
+      max-width: 400px;
+      font-size: 2rem;
+    }
+
+    header {
+      height: 38%;
+    }
+
+    .venner img {
+      width: 29vw;
+      bottom: -3.1rem;
+      right: 1rem;
+      max-width: none;
+    }
+
+    .buttons div {
+      top: 28%;
+    }
+  }
+
+  @media (width >= 640px) {
+    .instagram img,
+    .facebook img {
+      width: 40px;
+    }
+
+    .buttons div {
+      top: -110%;
+    }
+  }
+
+  @media (width >= 650px) {
+    .burger-menu,
+    .burger-toggle {
+      display: none !important;
+    }
+
+    .menu_list {
+      display: flex;
+      position: static;
+      background: none;
+      font-size: 0.8rem;
+      gap: 20px;
+      justify-content: end;
+    }
+
+    a {
+      color: white;
+    }
+
+    .menu {
+      justify-self: end;
+    }
+
+    .menu_list a:hover {
+      color: #fe902c;
+    }
+  }
+
+  @media (width >= 700px) {
+    .venner img {
+      bottom: -3.1rem;
+      right: 3.5rem;
+      max-width: 230px;
+    }
+  }
+
+  @media (width >= 800px) {
+    .frivillig_btn {
+      font-size: 1rem;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+    }
+
+    header {
+      height: 52%;
+    }
+
+    h1 {
+      max-width: 400px;
+      font-size: 2.8rem;
+    }
+
+    .venner img {
+      bottom: -2rem;
+      right: 3.5rem;
+      width: 325px;
+      max-width: none;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .menu_list {
+      font-size: 1rem;
+    }
+  }
+
+  @media (width >= 900px) {
+    .buttons div {
+      top: -27%;
+    }
+
+    h1 {
+      max-width: 500px;
+      padding-bottom: 42px;
+    }
+
+    .venner img {
+      bottom: -4.5rem;
+    }
+  }
+
+  @media (width >= 1000px) {
+    h1 {
+      max-width: 600px;
+    }
+
+    .instagram img,
+    .facebook img {
+      width: 50px;
+    }
+
+    .buttons div {
+      top: -60%;
+    }
+  }
+
+  @media (width >= 1200px) {
+    .buttons div {
+      top: -90%;
+    }
+
+    .frivillig_btn {
+      font-size: 1.3rem;
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+    }
+
+    .venner img {
+      width: 406px;
+      right: 8rem;
+      bottom: -5rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+      max-width: 730px;
+    }
+
+    header {
+      height: 65%;
+    }
+  }
+
+  @media (width >= 1450px) {
+    h1 {
+      max-width: 825px;
+    }
+  }
+</style>

@@ -1,6 +1,9 @@
 ---
 import Cards_Frida from "../components/cards_frida.astro";
+import Double from "../components/double.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Footer1 from "../components/footer1.astro";
 ---
 
 <Layout>
@@ -26,6 +29,17 @@ import Layout from "../layouts/Layout.astro";
       tid="1-2 timer hver/hver anden uge + du kan være frivillig i min. 6 måneder"
       hvor="Kontakt Karina Bisgaard-Frantzen for at høre hvor: kbf@weshelter.dk / +45 23 43 21 06"
     />
+    <!-- <Double
+      image="aktivitetsklubber.webp"
+      rolle="Aktivitets- <br/> klubber"
+      rolle1="Aktivitetsklubber"
+      class="wide-card"
+      mainText="Aktivitetsklub Østerbro <br/>Vil du give unge hjemløse på herberget Sporsløjfen gode oplevelser og fællesskab gennem sociale aktiviteter? <br/> Som frivillig deltager du i en fast gruppe, der mødes mandage kl. 17-20 og laver aktiviteter som spil, sport, biografture eller museumsture. En gang i kvartalet arrangeres større udflugter som Tivoli eller go-kart."
+      du=""
+      viTilbyder=""
+      tid=""
+      hvor=""
+    /> -->
     <div class="onefr">
       <Cards_Frida
         image="aktivitetsklubber.webp"
@@ -98,6 +112,8 @@ import Layout from "../layouts/Layout.astro";
       hvor="Storkøbenhavn"
     />
   </main>
+  <Footer />
+  <Footer1 />
 </Layout>
 
 <style>

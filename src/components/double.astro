@@ -1,10 +1,10 @@
 ---
-import { initFlipCards } from "../scripts/js";
-const { image, rolle, rolle1, class: customClass, mainText, du, viTilbyder, tid, hvor } = Astro.props;
+import { initFlipCardsOne } from "../scripts/js1";
+const { image, rolle, rolle1, rolle2, class: customClass, mainText, du, viTilbyder, tid, hvor, mainText2, du2, viTilbyder2, tid2, hvor2 } = Astro.props;
 const { oneWord } = Astro.props;
 ---
 
-<div class="card-container">
+<div class="card-container1">
   <div class={`card ${customClass ? customClass : ""}`}>
     <div class="card-face card-front" style={`background-image: url(${image});`}>
       <h2 class={oneWord && "oneWord"} set:html={rolle} />
@@ -12,7 +12,7 @@ const { oneWord } = Astro.props;
       <a href="#">Klik her for at læse mere &#8594;</a>
     </div>
     <!-- <div class={double && "double"}> -->
-    <div class="card-face card-back card2">
+    <div class="card-face card-back double">
       <div>
         <h3>{rolle1}</h3>
         <p set:html={mainText} />
@@ -28,126 +28,127 @@ const { oneWord } = Astro.props;
           <h3>📍</h3>
           <p set:html={hvor} />
         </div>
-        <div>
-          <h3>{rolle1}</h3>
-          <p set:html={mainText} />
-          <h3>Du...</h3>
-          <p set:html={du} />
-          <h3>Vi tilbyder...</h3>
-          <p set:html={viTilbyder} />
-          <div class="flex">
-            <h3>🕔</h3>
-            <p>{tid}</p>
-          </div>
-          <div class="flex">
-            <h3>📍</h3>
-            <p set:html={hvor} />
-          </div>
+      </div>
+
+      <div>
+        <h3>{rolle2}</h3>
+        <p set:html={mainText2} />
+        <h3>Du...</h3>
+        <p set:html={du2} />
+        <h3>Vi tilbyder...</h3>
+        <p set:html={viTilbyder2} />
+        <div class="flex">
+          <h3>🕔</h3>
+          <p>{tid2}</p>
+        </div>
+        <div class="flex">
+          <h3>📍</h3>
+          <p set:html={hvor2} />
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    import { initFlipCards } from "../scripts/js";
-    initFlipCards();
-  </script>
+<script>
+  import { initFlipCardsOne } from "../scripts/js1";
+  initFlipCardsOne();
+</script>
 
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-    h2 {
-      font-family: Inter;
-      margin-top: 17.2rem;
-      margin-bottom: 0rem;
-      margin-left: 0.5rem;
-      font-size: 38px;
-      text-transform: uppercase;
-    }
-    a {
-      text-decoration: none;
-      background-color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 1rem;
-      font-size: 15px;
-      margin-left: 0.5rem;
-      color: #0167ff;
-      font-family: Inter;
-      font-weight: 400;
-    }
-    * {
-      font-family: Inter;
-    }
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  h2 {
+    font-family: Inter;
+    margin-top: 17.2rem;
+    margin-bottom: 0rem;
+    margin-left: 0.5rem;
+    font-size: 38px;
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    background-color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    margin-left: 0.5rem;
+    color: #0167ff;
+    font-family: Inter;
+    font-weight: 400;
+  }
+  * {
+    font-family: Inter;
+  }
 
-    .card-container {
-      perspective: 1000px;
-      display: inline-block;
-    }
+  .card-container {
+    perspective: 1000px;
+    display: inline-block;
+  }
 
-    .card {
-      margin: 10px auto;
-      max-width: 600px;
-      flex: 1 1 300px; /* Vokser, men har en minimumsbredde */
-      min-height: 400px; /* Starter ved 400px, men vokser efter behov */
-      height: auto;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
-      border-radius: 1rem;
-      box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4); /* Højre og ned, 15px slør, 20% gennemsigtig sort */
-    }
+  .card {
+    margin: 10px auto;
+    max-width: 600px;
+    flex: 1 1 300px; /* Vokser, men har en minimumsbredde */
+    min-height: 400px; /* Starter ved 400px, men vokser efter behov */
+    height: auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4); /* Højre og ned, 15px slør, 20% gennemsigtig sort */
+  }
 
-    .card.flipped {
-      transform: rotateY(180deg);
-      min-height: 600px; /* Juster denne værdi efter behov */
-      height: auto;
-    }
+  .card.flipped {
+    transform: rotateY(180deg);
+    min-height: 600px; /* Juster denne værdi efter behov */
+    height: auto;
+  }
 
-    /* Sikrer, at kun én side vises ad gangen */
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      min-height: 100%; /* Starter ved 400px, men vokser efter behov */
+  /* Sikrer, at kun én side vises ad gangen */
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%; /* Starter ved 400px, men vokser efter behov */
 
-      /* display: flex;
+    /* display: flex;
 align-items: center;
 justify-content: center; */
-      border-radius: 10px;
-      backface-visibility: hidden;
-      border-radius: 1rem;
-    }
+    border-radius: 10px;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
 
-    .card-front {
-      background-size: cover;
-      background-position: center;
-    }
+  .card-front {
+    background-size: cover;
+    background-position: center;
+  }
 
-    .card-back {
-      background-color: #fe902c;
-      transform: rotateY(180deg);
-      color: white;
-    }
+  .card-back {
+    background-color: #fe902c;
+    transform: rotateY(180deg);
+    color: white;
+  }
 
-    .card-back > * {
-      margin: 1rem 1rem 0 1rem;
-    }
+  .card-back > * {
+    margin: 1rem 1rem 0 1rem;
+  }
 
-    .oneWord {
-      margin-top: 20.2rem;
-    }
+  .oneWord {
+    margin-top: 20.2rem;
+  }
 
-    .flex {
-      display: flex;
-    }
+  .flex {
+    display: flex;
+  }
 
-    /* span {
-    font-style: bold;
-  } */
-
-    @media (width >=700px) {
-      .wide-card {
-        max-width: 1100px;
-      }
+  .double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (width >=700px) {
+    .wide-card {
+      max-width: 1100px;
     }
-  </style>
-</div>
+  }
+</style>

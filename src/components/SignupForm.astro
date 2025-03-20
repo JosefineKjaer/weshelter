@@ -59,56 +59,32 @@
   <section>
     <div class="content">
       <label for="navn">Dit fulde navn:</label>
-      <input
-        type="text"
-        id="navn"
-        name="navn"
-        placeholder="fx Alex Axelsen"
-        required
-      />
+      <input type="text" id="navn" name="navn" placeholder="fx Alex Axelsen" required />
     </div>
 
     <div class="content">
       <label for="nummer">Dit telefonnummer:</label>
-      <input
-        type="tel"
-        id="nummer"
-        name="nummer"
-        placeholder="fx 12345678"
-        required
-      />
+      <input type="tel" id="nummer" name="nummer" placeholder="fx 12345678" required />
     </div>
 
     <div class="content">
       <label for="email">Din email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="fx alex_axel@gmail.com"
-        required
-      />
+      <input type="email" id="email" name="email" placeholder="fx alex_axel@gmail.com" required />
     </div>
 
     <div class="content">
       <label for="postnummer">Dit postnummer:</label>
-      <input
-        type="text"
-        id="postnummer"
-        name="postnummer"
-        placeholder="fx 1234"
-        required
-      />
+      <input type="text" id="postnummer" name="postnummer" placeholder="fx 1234" required />
     </div>
 
     <div class="content">
       <label for="kommentar">Spørgsmål eller kommentar?</label>
       <input type="text" id="kommentar" name="kommentar" />
     </div>
+    <div>
+      <input class="knap" type="submit" />
+    </div>
   </section>
-  <div>
-    <input class="knap" type="submit" />
-  </div>
 </form>
 
 <style>
@@ -118,6 +94,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
+    padding-top: 1rem;
   }
 
   .content {
@@ -136,23 +114,28 @@
     border: 2px solid rgba(1, 103, 255, 1);
     border-radius: 8px;
     font-family: Inter;
+    margin: auto;
+    margin-bottom: 1rem;
+    max-width: 550px;
+    width: 90%;
   }
   h1 {
     color: rgba(1, 103, 255, 1);
   }
   .knap {
-    color: rgba(1, 103, 255, 1);
+    color: white;
+    padding: 0.5rem 1rem;
+    background-color: #0167ff;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: #0167ff;
   }
   .overskrift,
   .underoverskrift {
     text-align: center;
   }
+
   @media (width > 768px) {
-    .checkbox-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-    }
     .form {
       max-width: 550px;
     }

@@ -1,26 +1,36 @@
 ---
 import { initFlipCards } from "../scripts/js";
-const { VilDuTekst, rolle, image } = Astro.props;
+const { image, rolle, rolle1, class: customClass, mainText, du, viTilbyder, tid, hvor } = Astro.props;
 const { oneWord } = Astro.props;
 ---
 
 <div class="card-container">
-  <div class="card">
+  <div class={`card ${customClass ? customClass : ""}`}>
     <div class="card-face card-front" style={`background-image: url(${image});`}>
       <h2 class={oneWord && "oneWord"} set:html={rolle} />
       <!-- Tillader HTML-tags i props -->
       <a href="#">Klik her for at læse mere &#8594;</a>
     </div>
-    <div class="card-face card-back">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quaerat veritatis, in voluptates velit, debitis quis quo, minus officiis quisquam odit autem magni! Fugit repellat saepe vitae optio. Facilis, illum? Lorem ipsum dolor sit
-        amet, consectetur adipisicing elit. Architecto mollitia reprehenderit distinctio cum repudiandae corporis quidem facere quasi similique aut quo consequatur fugiat perferendis eius, dolor ad illum asperiores dicta? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Aliquid voluptatibus officiis, praesentium, modi magnam ratione commodi laudantium illo facilis fugit non velit a harum omnis possimus ullam aliquam. Explicabo, accusamus!
-      </p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, dicta sed quasi error, necessitatibus quas omnis provident, fugit aut ab ducimus sequi eveniet culpa beatae earum ex distinctio. Corporis, ex.</p>
+    <!-- <div class={double && "double"}> -->
+    <div class="card-face card-back card2">
+      <h3>{rolle1}</h3>
+      <p set:html={mainText} />
+      <h3>Du...</h3>
+      <p set:html={du} />
+      <h3>Vi tilbyder...</h3>
+      <p set:html={viTilbyder} />
+      <div class="flex">
+        <h3>🕔</h3>
+        <p>{tid}</p>
+      </div>
+      <div class="flex">
+        <h3>📍</h3>
+        <p set:html={hvor} />
+      </div>
     </div>
   </div>
 </div>
+
 <script>
   import { initFlipCards } from "../scripts/js";
   initFlipCards();
@@ -47,6 +57,9 @@ const { oneWord } = Astro.props;
     font-family: Inter;
     font-weight: 400;
   }
+  * {
+    font-family: Inter;
+  }
 
   .card-container {
     perspective: 1000px;
@@ -55,9 +68,10 @@ const { oneWord } = Astro.props;
 
   .card {
     margin: 10px auto;
-    max-width: 90%;
-    width: 100vw;
-    height: 400px;
+    max-width: 600px;
+    flex: 1 1 300px; /* Vokser, men har en minimumsbredde */
+    min-height: 400px; /* Starter ved 400px, men vokser efter behov */
+    height: auto;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
@@ -67,17 +81,20 @@ const { oneWord } = Astro.props;
 
   .card.flipped {
     transform: rotateY(180deg);
-    min-height: 400px; /* Juster denne værdi efter behov */
+    min-height: 600px; /* Juster denne værdi efter behov */
+    height: auto;
   }
 
   /* Sikrer, at kun én side vises ad gangen */
   .card-face {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 100%; /* Starter ved 400px, men vokser efter behov */
+
     /* display: flex;
-    align-items: center;
-    justify-content: center; */
+align-items: center;
+justify-content: center; */
     border-radius: 10px;
     backface-visibility: hidden;
     border-radius: 1rem;
@@ -94,7 +111,25 @@ const { oneWord } = Astro.props;
     color: white;
   }
 
+  .card-back > * {
+    margin: 1rem 1rem 0 1rem;
+  }
+
   .oneWord {
     margin-top: 20.2rem;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  /* span {
+    font-style: bold;
+  } */
+
+  @media (width >=700px) {
+    .wide-card {
+      max-width: 1100px;
+    }
   }
 </style>

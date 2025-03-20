@@ -3,8 +3,8 @@
 ---
 
 <form class="form">
-  <h1>TILMELD DIG</h1>
-  <h4>Hvad kunne du tænke dig at hjælpe med?</h4>
+  <h1 class="overskrift">TILMELD DIG</h1>
+  <h4 class="underoverskrift">Hvad kunne du tænke dig at hjælpe med?</h4>
   <div class="checkbox-container">
     <div>
       <div class="checkbox-content">
@@ -142,12 +142,21 @@
   }
   .knap {
     color: rgba(1, 103, 255, 1);
+    border: 2px solid rgba(1, 103, 255, 1);
+    border-radius: 8px;
   }
   @media (width > 768px) {
     .checkbox-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
+    }
+    .form {
+      max-width: 550px;
+    }
+    .overskrift,
+    .underoverskrift {
+      text-align: center;
     }
   }
 </style>

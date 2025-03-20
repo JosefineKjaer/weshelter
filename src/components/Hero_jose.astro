@@ -1,24 +1,35 @@
 <header>
   <nav>
     <div class="logo"><p>WeShelter</p></div>
-    <button class="støt_btn">Støt</button>
 
-    <label for="burger-toggle" class="burger-menu">&#9776;</label>
-    <input type="checkbox" id="burger-toggle" class="burger-toggle" />
-    <ul class="menu_list">
-      <li><a href="">Få hjælp</a></li>
-      <li><a href="">Bliv frivillig</a></li>
-      <li><a href="">Om</a></li>
-      <li><a href="">Kontakt</a></li>
-    </ul>
+    <div class="menu">
+      <button class="støt_btn">Støt</button>
+
+      <label for="burger-toggle" class="burger-menu">&#9776;</label>
+      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+      <ul class="menu_list">
+        <li><a href="">Få hjælp</a></li>
+        <li><a href="">Bliv frivillig</a></li>
+        <li><a href="">Om</a></li>
+        <li><a href="">Kontakt</a></li>
+      </ul>
+    </div>
   </nav>
   <section class="hero">
     <div>
       <h1>“At være <span class="frivillig">frivillig</span> er at gøre en forskel – for andre og for dig selv.”</h1>
     </div>
-    <button class="frvillig_btn">Bliv frivillig</button>
-    <a class="facebook" href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a>
-    <a class="instagram" href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a>
+    <div class="venner">
+      <img src="/public/weshelter.webp" alt="" />
+    </div>
+    <div class="buttons">
+      <button class="frivillig_btn">Bliv frivillig</button>
+
+      <div>
+        <a class="facebook" href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a>
+        <a class="instagram" href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a>
+      </div>
+    </div>
   </section>
 </header>
 
@@ -27,307 +38,150 @@
 
   * {
     font-family: Inter;
-  }
-
-  header {
-    background-color: #0167ff;
-  }
-
-  .burger-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 35px;
-    position: absolute;
-    /* z-index: 101; */
     color: white;
-    top: 22%;
-    left: 90%;
-  }
-
-  .burger-toggle {
-    display: none;
-  }
-
-  .menu_list {
-    display: none;
-    position: absolute;
-    background-color: #0167ff;
-    z-index: 100;
-    text-align: center;
-    top: 90%;
-    width: 50%;
-  }
-
-  .menu_list a:hover {
-    color: #fe902c;
-  }
-
-  .hero {
-    background-image: url("/public/weshelter.webp");
-  }
-
-  button {
-    text-transform: uppercase;
-  }
-
-  /***************************************************/
-
-  .støt_btn {
-    position: absolute;
-    top: 8%;
-    left: 75%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .støt_knap:hover {
-    transform: scale(1.1); /* Gør knappen 10% større */
-  }
-
-  .støt_knap2 {
-    background-color: #fe902c;
-    padding-top: 15%;
-    padding-bottom: 15%;
-    padding-left: 40%;
-    padding-right: 40%;
-    border-radius: 20px;
-    font-size: 14px;
-  }
-  .logo {
-    padding: 3%;
-  }
-
-  h1 {
-    font-family: "Inter";
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    color: white;
-    padding-left: 10px;
-    font-size: 150%;
   }
 
   p {
-    font-family: "Inter";
-    color: white;
+    font-weight: 600;
+    padding-left: 5%;
+    font-size: 1.1rem;
   }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  a:link {
-    text-decoration: none;
-  }
-
-  a {
-    color: white;
-    font-family: "Inter";
-  }
-
-  .burger-toggle:checked + .menu-list {
-    display: block;
+  h1 {
+    font-weight: 600;
+    padding: 2%;
+    padding-left: 3%;
+    max-width: 280px;
   }
 
   .frivillig {
     color: #fe902c;
   }
 
-  .hero {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    padding-bottom: 8%;
-    padding-right: 10px;
+  header {
+    background-color: #0167ff;
+    width: 100%;
+    height: 260px;
   }
 
-  .hero img {
+  .venner {
+    position: relative;
+  }
+
+  .venner img {
+    position: absolute;
+    width: 130px;
+    right: 0.7rem;
+    bottom: -2rem;
+    z-index: 0;
+  }
+
+  /* BURGER MENU  */
+  .burger-menu {
+    cursor: pointer;
+    font-size: 35px;
+    color: white;
+  }
+
+  .burger-toggle {
+    display: none;
+  }
+
+  .burger-toggle:checked ~ .menu_list {
+    display: block;
+  }
+
+  .menu_list {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: #0167ff;
+    z-index: 100;
+    text-align: center;
+    top: 40px;
     width: 100%;
   }
 
-  .citat h1 {
-    font-size: 180%;
-    padding-left: 8%;
-    line-height: 100%;
+  .menu_list a:hover {
+    color: #fe902c;
   }
 
-  .bliv_frivillig {
-    position: absolute;
-    z-index: 100;
-    top: 27%;
-    left: 35%;
+  a {
+    text-decoration: none;
+    color: #0167ff;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 5px;
+  }
+
+  /********************/
+
+  /* KNAPPER */
+  button {
+    text-transform: uppercase;
+    border: none;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out; /* Smooth overgang */
   }
 
-  .bliv_frivillig:hover {
+  .støt_btn {
+    background-color: #fe902c;
+    border-radius: 70px;
+    padding: 0rem 1.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .støt_btn:hover {
     transform: scale(1.1); /* Gør knappen 10% større */
   }
 
-  .blivfrivillig_tekst {
+  .buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frivillig_btn {
     background-color: white;
     color: #0167ff;
-    padding-top: 8%;
-    padding-bottom: 8%;
-    padding-left: 1em;
-    padding-right: 1em;
-    border-radius: 40px;
-    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
   }
 
-  .facebook img {
-    /* position: absolute; */
-    width: 8%;
-    top: 26%;
-    left: 90%;
-    transition: transform 0.3s ease-in-out; /* Smooth overgang */
-  }
-
-  .facebook img:hover {
-    transform: scale(1.1); /* Gør knappen 10% større */
-  }
-
-  .instagram img {
+  .buttons div {
     position: absolute;
-    width: 8%;
-    top: 31.5%;
-    left: 90%;
-    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+    top: -65%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .instagram img:hover {
-    transform: scale(1.1); /* Gør knappen 10% større */
+  /********************/
+  /* NAV */
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0%;
   }
 
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 300%;
-    }
-
-    .header {
-      padding-top: 0%;
-    }
-
-    .logo {
-      padding-left: 2%;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      padding-bottom: 1%;
-      padding-top: 1%;
-    }
-
-    .hero img {
-      width: 550px;
-      margin-right: 60px;
-      margin-left: 0;
-    }
-
-    .citat h1 {
-      font-size: 550%;
-      padding-left: 5%;
-      line-height: 110%;
-    }
-
-    .bliv_frivillig {
-      position: absolute;
-      z-index: 100;
-      top: 85%;
-      left: 40%;
-    }
-
-    .blivfrivillig_tekst {
-      background-color: white;
-      color: #0167ff;
-      padding-top: 8%;
-      padding-bottom: 8%;
-      padding-left: 1em;
-      padding-right: 1em;
-      border-radius: 60px;
-      font-size: 250%;
-    }
-
-    .facebook img {
-      position: absolute;
-      width: 6%;
-      top: 85%;
-      left: 92%;
-    }
-
-    .instagram img {
-      position: absolute;
-      width: 6%;
-      top: 100%;
-      left: 92%;
-    }
-
-    .burger-menu {
-      font-size: 50px;
-    }
-    .støt_knap2 {
-      background-color: #fe902c;
-      padding-top: 20%;
-      padding-bottom: 20%;
-      padding-left: 40%;
-      padding-right: 40%;
-      border-radius: 25px;
-      font-size: 20px;
-    }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 10px;
+    gap: 10px;
   }
-  @media (min-width: 1400px) {
-    .burger-menu,
-    .burger-toggle,
-    .menu-list {
-      display: none !important; /* Skjuler burger-menu og dropdown-menu på stor skærm */
-    }
 
-    .menu-list {
-      display: flex !important; /* Viser menuen i headeren på stor skærm */
-      flex-direction: row;
-      position: static; /* Fjern absolut positionering */
-      background: none; /* Fjern baggrundsfarven */
-      padding-left: 250%;
-      font-size: 140%;
-      padding-top: 22%;
-      gap: 50%;
-      white-space: nowrap;
-    }
+  /* INSTA/FB */
 
-    .menu-list a {
-      color: white; /* Tilpas tekstfarven */
-
-      text-decoration: none;
-    }
-
-    .menu-list a:hover {
-      color: #fe902c;
-    }
-
-    .støt_knap {
-      position: absolute;
-      left: 92%;
-      top: 12%;
-      display: flex; /* Brug flexbox for at centrere indholdet */
-      justify-content: center; /* Centrerer teksten horisontalt */
-      align-items: center; /* Centrerer teksten vertikalt */
-      text-align: center; /* Sørger for, at teksten er centreret */
-      cursor: pointer; /* Gør det til en klikbar knap */
-    }
-
-    .støt_knap2 {
-      background-color: #fe902c;
-      padding-top: 20%;
-      padding-bottom: 20%;
-      padding-left: 40%;
-      padding-right: 40%;
-      border-radius: 25px;
-      font-size: 20px;
-    }
+  .instagram img,
+  .facebook img {
+    width: 30px;
   }
 </style>

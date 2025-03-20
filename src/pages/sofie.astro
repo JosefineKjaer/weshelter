@@ -1,0 +1,24 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="hero_section">
+    <Hero />
+  </section>
+</Layout>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Sørger for, at body fylder hele vinduet */
+  }
+  .hero_section {
+    background-color: #0167ff;
+    margin: 0; /* Sørger for, at der ikke er margin på sektionen */
+    padding: 0; /* Sørger for, at der ikke er padding på sektionen */
+  }
+</style>

@@ -1,6 +1,9 @@
 ---
 import Cards_Frida from "../components/cards_frida.astro";
+import Double from "../components/double.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Footer1 from "../components/footer1.astro";
 ---
 
 <Layout>
@@ -27,16 +30,22 @@ import Layout from "../layouts/Layout.astro";
       hvor="Kontakt Karina Bisgaard-Frantzen for at høre hvor: kbf@weshelter.dk / +45 23 43 21 06"
     />
     <div class="onefr">
-      <Cards_Frida
+      <Double
         image="aktivitetsklubber.webp"
         rolle="Aktivitets- <br/> klubber"
-        rolle1="Aktivitetsklubber"
+        rolle1="Aktivitetsklubber Østerbro"
+        rolle2="Aktivitetsklub rusmiddelbehandling"
         class="wide-card"
-        mainText="Aktivitetsklub Østerbro <br/>Vil du give unge hjemløse på herberget Sporsløjfen gode oplevelser og fællesskab gennem sociale aktiviteter? <br/> Som frivillig deltager du i en fast gruppe, der mødes mandage kl. 17-20 og laver aktiviteter som spil, sport, biografture eller museumsture. En gang i kvartalet arrangeres større udflugter som Tivoli eller go-kart."
-        du=""
-        viTilbyder=""
-        tid=""
-        hvor=""
+        mainText="Vil du give unge hjemløse på herberget Sporsløjfen gode oplevelser og fællesskab gennem sociale aktiviteter? <br/> Som frivillig deltager du i en fast gruppe, der mødes mandage kl. 17-20 og laver aktiviteter som spil, sport, biografture eller museumsture. En gang i kvartalet arrangeres større udflugter som Tivoli eller go-kart."
+        du="-	Er fyldt 25 år og robust i mødet med sårbare unge <br/>-	Er stabil, tålmodig og udadvendt <br/>-	Deltager i introkursus og netværksmøder "
+        viTilbyder="-	Et meningsfuldt frivilligjob med unikke oplevelser <br/>-	Introduktionskursus og faglig sparring <br/>-	Et stærkt fællesskab med andre frivillige <br/>-	Dokumentation for dit engagement efter et år"
+        tid="Fast mandage kl. 17-20 i min. et halvt år"
+        hvor="Østerbro"
+        mainText2="Vil du være med til at skabe fællesskab og gode oplevelser for mennesker, der tager skridtet ud af rusmidler? <br/>Som frivillig mødes du ugentligt med en fast gruppe og deltager i aktiviteter som cafébesøg, museums- og naturture. Formålet er at støtte brugerne i at deltage i sociale aktiviteter uden for stofbrugsmiljøet."
+        du2="-	Er stabil, tålmodig og møder brugerne i øjenhøjde -	Ønsker at samarbejde med frivillige og personale <br/> - Du har tid til at deltage fast i min. 6 måneder"
+        viTilbyder2="-	Et meningsfuldt frivilligjob med socialt fællesskab <br/>-	Indsigt i socialt arbejde og misbrugsbehandling <br/>-	Introkursus, løbende sparring og netværksmøder <br/>-	Dokumentation for dit frivillige arbejde"
+        tid2="Torsdage kl. 13 og tirsdage kl. 12"
+        hvor2="Dagcenter Stæren, Rusmiddelbehandling Vigerslev Allé"
       />
     </div>
     <Cards_Frida
@@ -64,17 +73,42 @@ import Layout from "../layouts/Layout.astro";
       image="ledelse.webp"
       rolle="Aktivitets- <br/> ledelse"
       rolle1="Aktivitetsledelse"
-      mainText=" Brænder du for frivilligledelse, planlægning og projektudvikling? Vil du være med til at gøre en kæmpe forskel for mennesker i hjemløshed og udsatte? <br/><br/> Weshelter leder lige nu efter frivillige aktivitetsledere, som vil være med til at understøtte drift, kvalitet og udvikling i vores sociale madklubber. Er du mon den, vi leder efter? <br/><br/> Send os en ansøgning på frivillig@weshelter.dk eller skriv for at høre mere."
+      mainText="Weshelter leder lige nu efter frivillige aktivitetsledere, som vil være med til at understøtte drift, kvalitet og udvikling i vores sociale madklubber. Er du mon den, vi leder efter?"
+      du="- Brænder for frivilligledelse, planlægning og projektudvikling <br/> - Vil du være med til at gøre en kæmpe forskel for mennesker i hjemløshed og udsatte"
+      viTilbyder="Send os en ansøgning på frivillig@weshelter.dk eller skriv for at høre mere"
+      tid="Skriv til os for at høre nærmere"
+      hvor="Storkøbenhavn"
     />
     <Cards_Frida
       image="peer-to-peer.webp"
       rolle="Peer-to-peer"
       rolle1="Peer-to-peer"
       oneWord
-      mainText="Drømmen om et liv i egen bolig kan virke fjern og uopnåelig, når man lever i hjemløshed, og knapt kan overskue en dag ad gangen. <br/><br/> I vores netværksindsats, peer-to-peer, deler tidligere hjemløse deres erfaringer med nuværende hjemløse. De personlige beretninger giver håb om et bedre liv - og konkrete handlemuligheder, som den hjemløse kan bruge på vejen ud af hjemløsheden. <br/><br/> Har du erfaring med hjemløshed? Og har du lyst til at gøre en forskel for andre, der står i en vanskelig situation? Så har vi brug for dig! <br/><br/> Kontakt Emilie Gad for at høre mere eg@weshelter.dk / +45 24 98 30 09"
+      mainText="Drømmen om et liv i egen bolig kan virke fjern og uopnåelig, når man lever i hjemløshed, og knapt kan overskue en dag ad gangen. <br/><br/> I vores netværksindsats, peer-to-peer, deler tidligere hjemløse deres erfaringer med nuværende hjemløse. De personlige beretninger giver håb om et bedre liv - og konkrete handlemuligheder, som den hjemløse kan bruge på vejen ud af hjemløsheden."
+      du="- Har erfaring med hjemløshed <br/> - Har du lyst til at gøre en forskel for andre, der står i en vanskelig situation"
+      viTilbyder="Kontakt Emilie Gad for at høre mere eg@weshelter.dk / +45 24 98 30 09"
+      tid="Skriv til os for at høre nærmere"
+      hvor="Storkøbenhavn"
     />
     <div class="onefr">
-      <Cards_Frida image="madklubber.webp" rolle="Sociale <br/> madklubber" class="wide-card" mainText="" du="" viTilbyder="" tid="" hvor="" />
+      <Double
+        image="madklubber.webp"
+        rolle="Sociale <br/> madklubber"
+        class="wide-card"
+        rolle1="Social madklub"
+        rolle2="Under åben himmel"
+        class="wide-card"
+        mainText="Vil du være med til at bekæmpe ensomhed gennem fællesskab og madlavning? <br/>I WeShelters madklubber laver frivillige og brugere/beboere mad sammen på herberger, væresteder og i Offsides Sociale Haver. Formålet er ikke kun at lave mad, men at skabe fællesskab gennem måltidet."
+        du="- Behøver ingen særlige madkundskaber <br/> -	Er moden, stabil og social"
+        viTilbyder="-	Et meningsfuldt fællesskab <br/>-	Introduktionskursus og løbende sparring <br/> -	Dokumentation for dit frivillige arbejde"
+        tid="Du har tid til at deltage hver anden uge i ca. 3 timer og kan forpligte dig til minimum ét år"
+        hvor="Madklubberne afholdes forskellige steder i København"
+        mainText2="Vil du være med til at bekæmpe ensomhed og skabe fællesskab gennem madlavning i det fri? <br/> WeShelter starter en udendørs madklub i Offsides Sociale Haver, et fristed for psykisk sårbare og socialt udsatte. Her samles vi omkring madlavning i naturen og skaber trygge fællesskaber."
+        du2="- Er social, udadvendt og rummelig <br/>-	Kan lide at lave mad og være ude i al slags vejr"
+        viTilbyder2="-	Et meningsfuldt frivilligjob med socialt fællesskab <br/>-	Indsigt i socialt arbejde og misbrugsbehandling <br/>-	Introkursus, løbende sparring og netværksmøder <br/>-	Dokumentation for dit frivillige arbejde"
+        tid2="Torsdage kl. 13 og tirsdage kl. 12"
+        hvor2="Dagcenter Stæren, Rusmiddelbehandling Vigerslev Allé"
+      />
     </div>
 
     <Cards_Frida
@@ -98,6 +132,8 @@ import Layout from "../layouts/Layout.astro";
       hvor="Storkøbenhavn"
     />
   </main>
+  <Footer />
+  <Footer1 />
 </Layout>
 
 <style>

@@ -1,0 +1,310 @@
+<div class="header">
+  <div class="logo"><h1>WeShelter</h1></div>
+  <div class="støt_knap"><p class="støt_knap2">STØT</p></div>
+  <div>
+    <nav>
+      <label for="burger-toggle" class="burger-menu">&#9776;</label>
+      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
+      <ul class="menu-list">
+        <li><a href="">Få hjælp</a></li>
+        <li><a href="">Bliv frivillig</a></li>
+        <li><a href="">Om</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="hero">
+  <div class="citat"><h1>“At være <span class="frivillig">frivillig</span> er at gøre en forskel – for andre og for dig selv.”</h1></div>
+  <div>
+    <img src="/public/weshelter.webp" />
+  </div>
+</div>
+<div class="bliv_frivillig"><p class="blivfrivillig_tekst">BLIV FRIVILLIG</p></div>
+<div class="facebook"><a href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a></div>
+<div class="instagram"><a href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a></div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    position: relative;
+  }
+  .støt_knap {
+    position: absolute;
+    top: 8%;
+    left: 75%;
+    display: flex; /* Brug flexbox for at centrere indholdet */
+    justify-content: center; /* Centrerer teksten horisontalt */
+    align-items: center; /* Centrerer teksten vertikalt */
+    text-align: center; /* Sørger for, at teksten er centreret */
+    cursor: pointer; /* Gør det til en klikbar knap */
+    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+  }
+
+  .støt_knap:hover {
+    transform: scale(1.1); /* Gør knappen 10% større */
+  }
+
+  .støt_knap2 {
+    background-color: #fe902c;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 40%;
+    padding-right: 40%;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  .logo {
+    padding: 3%;
+  }
+
+  h1 {
+    font-family: "Inter";
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding-left: 10px;
+    font-size: 150%;
+  }
+
+  p {
+    font-family: "Inter";
+    color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a {
+    color: white;
+    font-family: "Inter";
+  }
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 35px;
+    position: absolute;
+    z-index: 101;
+    color: white;
+    top: 22%;
+    left: 90%;
+  }
+
+  .burger-toggle {
+    display: none;
+  }
+
+  .menu-list {
+    display: none;
+    position: absolute;
+    background-color: #0167ff;
+    z-index: 100;
+    text-align: center;
+    top: 90%;
+    width: 50%;
+  }
+
+  .menu-list a:hover {
+    color: #fe902c;
+  }
+
+  .burger-toggle:checked + .menu-list {
+    display: block;
+  }
+
+  .frivillig {
+    color: #fe902c;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-bottom: 8%;
+    padding-right: 10px;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .citat h1 {
+    font-size: 180%;
+    padding-left: 8%;
+    line-height: 100%;
+  }
+
+  .bliv_frivillig {
+    position: absolute;
+    z-index: 100;
+    top: 27%;
+    left: 35%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+  }
+
+  .bliv_frivillig:hover {
+    transform: scale(1.1); /* Gør knappen 10% større */
+  }
+
+  .blivfrivillig_tekst {
+    background-color: white;
+    color: #0167ff;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 40px;
+    white-space: nowrap;
+  }
+
+  .facebook img {
+    position: absolute;
+    width: 8%;
+    top: 27%;
+    left: 90%;
+    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+  }
+
+  .facebook img:hover {
+    transform: scale(1.1); /* Gør knappen 10% større */
+  }
+
+  .instagram img {
+    position: absolute;
+    width: 8%;
+    top: 33%;
+    left: 90%;
+    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+  }
+
+  .instagram img:hover {
+    transform: scale(1.1); /* Gør knappen 10% større */
+  }
+
+  @media (min-width: 768px) {
+    .burger-menu,
+    .burger-toggle,
+    .menu-list {
+      display: none !important; /* Skjuler burger-menu og dropdown-menu på stor skærm */
+    }
+
+    .menu-list {
+      display: flex !important; /* Viser menuen i headeren på stor skærm */
+      flex-direction: row;
+      position: static; /* Fjern absolut positionering */
+      background: none; /* Fjern baggrundsfarven */
+      padding-left: 250%;
+      font-size: 140%;
+      padding-top: 22%;
+      gap: 50%;
+      white-space: nowrap;
+    }
+
+    .menu-list a {
+      color: white; /* Tilpas tekstfarven */
+
+      text-decoration: none;
+    }
+
+    .menu-list a:hover {
+      color: #fe902c;
+    }
+
+    h1 {
+      font-size: 300%;
+    }
+
+    .header {
+      padding-top: 0%;
+    }
+
+    .logo {
+      padding-left: 2%;
+    }
+
+    .støt_knap {
+      position: absolute;
+      left: 92%;
+      top: 12%;
+      display: flex; /* Brug flexbox for at centrere indholdet */
+      justify-content: center; /* Centrerer teksten horisontalt */
+      align-items: center; /* Centrerer teksten vertikalt */
+      text-align: center; /* Sørger for, at teksten er centreret */
+      cursor: pointer; /* Gør det til en klikbar knap */
+    }
+
+    .støt_knap2 {
+      background-color: #fe902c;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      padding-left: 40%;
+      padding-right: 40%;
+      border-radius: 25px;
+      font-size: 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      padding-bottom: 1%;
+      padding-top: 1%;
+    }
+
+    .hero img {
+      width: 550px;
+      margin-right: 60px;
+      margin-left: 0;
+    }
+
+    .citat h1 {
+      font-size: 550%;
+      padding-left: 5%;
+      line-height: 110%;
+    }
+
+    .bliv_frivillig {
+      position: absolute;
+      z-index: 100;
+      top: 85%;
+      left: 40%;
+    }
+
+    .blivfrivillig_tekst {
+      background-color: white;
+      color: #0167ff;
+      padding-top: 8%;
+      padding-bottom: 8%;
+      padding-left: 1em;
+      padding-right: 1em;
+      border-radius: 60px;
+      font-size: 250%;
+    }
+
+    .facebook img {
+      position: absolute;
+      width: 6%;
+      top: 85%;
+      left: 92%;
+    }
+
+    .instagram img {
+      position: absolute;
+      width: 6%;
+      top: 100%;
+      left: 92%;
+    }
+  }
+</style>

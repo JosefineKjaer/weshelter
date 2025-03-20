@@ -1,53 +1,86 @@
-<div class="header">
-  <div class="logo"><h1>WeShelter</h1></div>
-  <div class="støt_knap"><p class="støt_knap2">STØT</p></div>
-  <div>
-    <nav class="nav_grid">
-      <label for="burger-toggle" class="burger-menu">&#9776;</label>
-      <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+<header>
+  <nav>
+    <div class="logo"><p>WeShelter</p></div>
+    <button class="støt_btn">Støt</button>
 
-      <ul class="menu-list">
-        <li><a href="">Få hjælp</a></li>
-        <li><a href="">Bliv frivillig</a></li>
-        <li><a href="">Om</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<div class="hero">
-  <div class="citat"><h1>“At være <span class="frivillig">frivillig</span> er at gøre en forskel – for andre og for dig selv.”</h1></div>
-  <div>
-    <img src="/public/weshelter.webp" />
-  </div>
-</div>
-<div class="bliv_frivillig"><p class="blivfrivillig_tekst">BLIV FRIVILLIG</p></div>
-<div class="facebook"><a href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a></div>
-<div class="instagram"><a href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a></div>
+    <label for="burger-toggle" class="burger-menu">&#9776;</label>
+    <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+    <ul class="menu_list">
+      <li><a href="">Få hjælp</a></li>
+      <li><a href="">Bliv frivillig</a></li>
+      <li><a href="">Om</a></li>
+      <li><a href="">Kontakt</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div>
+      <h1>“At være <span class="frivillig">frivillig</span> er at gøre en forskel – for andre og for dig selv.”</h1>
+    </div>
+    <button class="frvillig_btn">Bliv frivillig</button>
+    <a class="facebook" href="https://www.facebook.com/WeShelter"><img src="/public/Facebooklogo.png" /></a>
+    <a class="instagram" href="https://www.instagram.com/weshelter/"><img src="/public/Instalogo.png" /></a>
+  </section>
+</header>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-  .nav_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  * {
+    font-family: Inter;
   }
 
-  .header {
-    display: flex;
-    flex-direction: row;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    position: relative;
+  header {
+    background-color: #0167ff;
   }
-  .støt_knap {
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 35px;
+    position: absolute;
+    /* z-index: 101; */
+    color: white;
+    top: 22%;
+    left: 90%;
+  }
+
+  .burger-toggle {
+    display: none;
+  }
+
+  .menu_list {
+    display: none;
+    position: absolute;
+    background-color: #0167ff;
+    z-index: 100;
+    text-align: center;
+    top: 90%;
+    width: 50%;
+  }
+
+  .menu_list a:hover {
+    color: #fe902c;
+  }
+
+  .hero {
+    background-image: url("/public/weshelter.webp");
+  }
+
+  button {
+    text-transform: uppercase;
+  }
+
+  /***************************************************/
+
+  .støt_btn {
     position: absolute;
     top: 8%;
     left: 75%;
-    display: flex; /* Brug flexbox for at centrere indholdet */
-    justify-content: center; /* Centrerer teksten horisontalt */
-    align-items: center; /* Centrerer teksten vertikalt */
-    text-align: center; /* Sørger for, at teksten er centreret */
-    cursor: pointer; /* Gør det til en klikbar knap */
-    transition: transform 0.3s ease-in-out; /* Smooth overgang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
   }
 
   .støt_knap:hover {
@@ -95,35 +128,6 @@
   a {
     color: white;
     font-family: "Inter";
-  }
-
-  .burger-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 35px;
-    position: absolute;
-    z-index: 101;
-    color: white;
-    top: 22%;
-    left: 90%;
-  }
-
-  .burger-toggle {
-    display: none;
-  }
-
-  .menu-list {
-    display: none;
-    position: absolute;
-    background-color: #0167ff;
-    z-index: 100;
-    text-align: center;
-    top: 90%;
-    width: 50%;
-  }
-
-  .menu-list a:hover {
-    color: #fe902c;
   }
 
   .burger-toggle:checked + .menu-list {

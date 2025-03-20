@@ -1,16 +1,22 @@
 <article>
-  <h1>Fonden Missionen blandt Hjemløse</h1>
-  <p>Vi arbejder for at give hjemløse og udsatte bedre vilkår. Målet er at gøre op med hjemløshed, ensomhed og psykisk mistrivsel. Arbejdet sker på herberger, væresteder og i frivillige indsatser.</p>
-  <h2>Genveje</h2>
-  <h3>Hjem</h3>
-  <h3>Om os</h3>
-  <h3>Vores indsatser</h3>
-  <h3>Kontakt</h3>
-  <h2>Kontakt os</h2>
-  <p>
-    Slotsgade 2, 1. sal <br />2200 København N
-  </p>
-  <p>Tlf: 36161113 <br />E-mail: kontakt@weshelter.dk <br />CVR 8096515</p>
+  <div class="max">
+    <h1>Fonden Missionen blandt Hjemløse</h1>
+    <p>Vi arbejder for at give hjemløse og udsatte bedre vilkår. Målet er at gøre op med hjemløshed, ensomhed og psykisk mistrivsel. Arbejdet sker på herberger, væresteder og i frivillige indsatser.</p>
+  </div>
+  <div>
+    <h2>Genveje</h2>
+    <h3>Hjem</h3>
+    <h3>Om os</h3>
+    <h3>Vores indsatser</h3>
+    <h3>Kontakt</h3>
+  </div>
+  <div>
+    <h2>Kontakt os</h2>
+    <p>
+      Slotsgade 2, 1. sal <br />2200 København N
+    </p>
+    <p>Tlf: 36161113 <br />E-mail: kontakt@weshelter.dk <br />CVR 8096515</p>
+  </div>
 </article>
 
 <style>
@@ -26,5 +32,17 @@
   }
   h2 {
     padding-top: 2rem;
+  }
+
+  @media (width >=650px) {
+    article {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .max {
+      max-width: 400px;
+    }
   }
 </style>

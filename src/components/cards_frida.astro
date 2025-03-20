@@ -4,7 +4,7 @@ const { image, rolle, rolle1, class: customClass, mainText, du, viTilbyder, tid,
 const { oneWord } = Astro.props;
 ---
 
-<div class="card-container">
+<article class="card-container">
   <div class={`card ${customClass ? customClass : ""}`}>
     <div class="card-face card-front" style={`background-image: url(${image});`}>
       <h2 class={oneWord && "oneWord"} set:html={rolle} />
@@ -13,23 +13,26 @@ const { oneWord } = Astro.props;
     </div>
     <!-- <div class={double && "double"}> -->
     <div class="card-face card-back card2">
-      <h3>{rolle1}</h3>
-      <p set:html={mainText} />
-      <h3>Du...</h3>
-      <p set:html={du} />
-      <h3>Vi tilbyder...</h3>
-      <p set:html={viTilbyder} />
-      <div class="flex">
-        <h3>🕔</h3>
-        <p>{tid}</p>
-      </div>
-      <div class="flex">
-        <h3>📍</h3>
-        <p set:html={hvor} />
+      <div class="flex1">
+        <h3>{rolle1}</h3>
+        <p set:html={mainText} />
+        <h3>Du...</h3>
+        <p set:html={du} />
+        <h3>Vi tilbyder...</h3>
+        <p set:html={viTilbyder} />
+        <div class="flex">
+          <h3>🕔</h3>
+          <p>{tid}</p>
+        </div>
+        <div class="flex">
+          <h3>📍</h3>
+          <p set:html={hvor} />
+        </div>
+        <button class="tilmeld">Tilmeld dig</button>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 <script>
   import { initFlipCards } from "../scripts/js";
@@ -38,6 +41,26 @@ const { oneWord } = Astro.props;
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  .flex1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .tilmeld {
+    align-self: flex-start;
+    align-self: center;
+    text-align: center;
+    background-color: white;
+    padding: 0.7rem 2rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    margin-left: 0.5rem;
+    color: #0167ff;
+    font-family: Inter;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+  }
+
   h2 {
     font-family: Inter;
     margin-top: 20.2rem;
@@ -81,7 +104,7 @@ const { oneWord } = Astro.props;
 
   .card.flipped {
     transform: rotateY(180deg);
-    min-height: 770px; /* Juster denne værdi efter behov */
+    min-height: 800px; /* Juster denne værdi efter behov */
     height: auto;
   }
 
@@ -128,19 +151,13 @@ const { oneWord } = Astro.props;
       max-width: 1100px;
     }
     .card.flipped {
-      min-height: 820px; /* Juster denne værdi efter behov */
+      min-height: 950px; /* Juster denne værdi efter behov */
     }
   }
 
   @media (width >=850px) {
     .card.flipped {
-      min-height: 720px; /* Juster denne værdi efter behov */
-    }
-  }
-
-  @media (width >=950px) {
-    .card.flipped {
-      min-height: 580px; /* Juster denne værdi efter behov */
+      min-height: 750px; /* Juster denne værdi efter behov */
     }
   }
 </style>

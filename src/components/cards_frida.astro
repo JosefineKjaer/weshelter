@@ -68,9 +68,9 @@ const { oneWord } = Astro.props;
 
   .card {
     margin: 10px auto;
-    max-width: 600px;
+    max-width: 550px;
     flex: 1 1 300px; /* Vokser, men har en minimumsbredde */
-    min-height: 400px; /* Starter ved 400px, men vokser efter behov */
+    min-height: 450px; /* Starter ved 400px, men vokser efter behov */
     height: auto;
     position: relative;
     transform-style: preserve-3d;
@@ -81,7 +81,7 @@ const { oneWord } = Astro.props;
 
   .card.flipped {
     transform: rotateY(180deg);
-    min-height: 600px; /* Juster denne værdi efter behov */
+    min-height: 770px; /* Juster denne værdi efter behov */
     height: auto;
   }
 
@@ -91,10 +91,6 @@ const { oneWord } = Astro.props;
     width: 100%;
     height: auto;
     min-height: 100%; /* Starter ved 400px, men vokser efter behov */
-
-    /* display: flex;
-align-items: center;
-justify-content: center; */
     border-radius: 10px;
     backface-visibility: hidden;
     border-radius: 1rem;
@@ -130,6 +126,21 @@ justify-content: center; */
   @media (width >=700px) {
     .wide-card {
       max-width: 1100px;
+    }
+    .card.flipped {
+      min-height: 820px; /* Juster denne værdi efter behov */
+    }
+  }
+
+  @media (width >=850px) {
+    .card.flipped {
+      min-height: 720px; /* Juster denne værdi efter behov */
+    }
+  }
+
+  @media (width >=950px) {
+    .card.flipped {
+      min-height: 580px; /* Juster denne værdi efter behov */
     }
   }
 </style>
